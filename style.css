@@ -1,0 +1,62 @@
+/*
+WP WIF Player, an easy to use GIF Player for Wordpress
+Copyright (C) 2015  Stefanie Stoppel @ psmedia GmbH (http://p-s-media.de/kontakt)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+.gif_wrap .play_gif {
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    margin-top: -1.7em;
+    left: 50%;
+    margin-left: -1.7em;
+    height: 3.4em;
+    width: 3.4em;
+    text-align: center;
+    overflow: hidden;
+    background: #222;
+    line-height: 3em;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    opacity: .9;
+    border: 0.2em solid #fff;
+}
+.gif_wrap {
+    position: relative;
+}
+.empty_span {
+    position: absolute;
+    z-index: 900;
+    height: 100%;
+    width: 100%;
+}
+.gif_spinner{
+    z-index: -1;
+    position: relative;
+}
+.gif_spinner{
+    z-index: 3 !important;
+}
+img._showing{
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+}
+img._hidden{
+    visibility: hidden;
+}
