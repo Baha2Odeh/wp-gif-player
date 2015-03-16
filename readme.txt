@@ -18,7 +18,7 @@ WP GIF Player is an easy to use GIF Player for WordPress. It prevents GIF-files 
 * Does stop
 * Loads GIF-files on-demand for faster page load times
 * Plays only one GIF at a time
-* Creates a preview images automatically
+* Creates preview images automatically
 * GIFs can be added easily with the Add GIF Button
 + Supports parallel uploads
 * Simple installation
