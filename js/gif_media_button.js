@@ -1,5 +1,5 @@
 /*
- WP GIF Player, an easy to use GIF Player for Wordpress
+ WP Gif Player, an easy to use GIF Player for Wordpress
  Copyright (C) 2015  Stefanie Stoppel @ psmedia GmbH (http://p-s-media.de/kontakt)
 
  This program is free software: you can redistribute it and/or modify
@@ -34,9 +34,9 @@ jQuery(function($) {
                 var all_gifs = self.window.state().get('selection').toJSON();
                 $(all_gifs).each(function(){
                     if(this.mime === "image/gif"){
-                        wp.media.editor.insert('[WPGP gif_id="' + this.id + '"]');
+                        wp.media.editor.insert('[WPGP gif_id="' + this.id + '" width="600"]\n');
                     }else{
-                        alert(unescape("Der hochgeladene Dateityp wird von WP GIF Player nicht unterst%FCtzt. Bitte laden Sie nur Dateien im .gif Format hoch%21%0A"));
+                        alert(unescape("Der hochgeladene Dateityp wird von WP Gif Player nicht unterst%FCtzt. Bitte laden Sie nur Dateien im .gif Format hoch%21%0A"));
                     }
                 });
             });
