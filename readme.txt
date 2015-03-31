@@ -24,6 +24,8 @@ WP GIF Player is an easy to use GIF Player for WordPress. It prevents GIF-files 
 * Simple installation
 * Easily limit maximum screen size of your GIF
 
+Check the demo page at [wp-gif-player.p-s-media.de](http://wp-gif-player.p-s-media.de)
+
 == Installation ==
 
 The installation process.
