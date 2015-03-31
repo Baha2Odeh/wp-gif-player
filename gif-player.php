@@ -2,13 +2,13 @@
 /*
 Plugin Name: WP GIF Player
 Description:  An easy to use GIF Player for Wordpress
-Version: 0.7
+Version: 0.8
 Author: Stefanie Stoppel @ psmedia GmbH
 Author URI: http://p-s-media.de/
 */
 
 /*
-WP Gif Player, an easy to use GIF Player for Wordpress
+WP GIF Player, an easy to use GIF Player for Wordpress
 Copyright (C) 2015  Stefanie Stoppel @ psmedia GmbH (http://p-s-media.de/kontakt)
 
 This program is free software: you can redistribute it and/or modify
@@ -102,7 +102,12 @@ class WP_GIF_Player{
     function shortcodes($atts){
         extract(shortcode_atts(array(
             'gif_id' => '',
+            'width' => '',
         ), $atts));
+
+        if(is_numeric($width)){
+            $width = 'wpgp-width'.$width;
+        }
 
         $output = '';
         if($gif_id != null && !empty($gif_id) ){
@@ -113,10 +118,10 @@ class WP_GIF_Player{
                     $gif_attach = $gif_array[0];
                 }
                 $still_attach = preg_replace('/\.gif$/', '_still_tmp.jpeg', $gif_attach);
-                $output = '<div class="gif_wrap">
-                        <span class="empty_span"  ></span>
-                        <span class="play_gif">GIF</span>
-                        <img src="' . $still_attach . '" class="_showing frame no-lazy" alt="bla" />
+                $output = '<div class="gif_wrap ' . $width . '">
+                        <span class="empty_span ' . $width . '"></span>
+                        <span class="play_gif ' . $width . '">GIF</span>
+                        <img src="' . $still_attach . '" class="_showing frame no-lazy" />
                    </div>
                    <img src="' . $still_attach . '" class="_hidden no-lazy" alt="bla" style="display:none;" /><br>';
             }
@@ -266,7 +271,7 @@ class WP_GIF_Player{
     * Add menu for this plugin under "Settings -> WP Gif Player"
     */
     function add_options_menu(){
-        add_options_page( 'WP GIF Player Options', 'WP GIF Player', 'manage_options', 'wp-gif-player-menu', array($this, 'options_output') );
+        add_options_page( 'WP Gif Player Options', 'WP Gif Player', 'manage_options', 'wp-gif-player-menu', array($this, 'options_output') );
     }
 
     /*
@@ -280,7 +285,7 @@ class WP_GIF_Player{
         $this->options = get_option( 'set_still_as_featured' );
 
         echo '<div class="wrap">
-                <h2>' . _e('WP GIF Player Settings', 'WPGP' ). '</h2>
+                <h2>' . _e('WP Gif Player Settings', 'WPGP' ). '</h2>
                 <form method="post" action="options.php"> ';
         settings_fields( 'featured_still' );
         do_settings_sections( 'wp-gif-player-menu' );
