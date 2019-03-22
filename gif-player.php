@@ -260,9 +260,10 @@ class WP_GIF_Player{
         //create a new file path by adding _still(.gif) to the current file path
         $new_still = preg_replace('/\.gif$/', '_still_tmp.jpeg', $img_url);
         $new_still_path = str_replace( home_url(), ABSPATH, $new_still); //hier kann auch ein Array übergeben werden
+        $img_url = str_replace( home_url(), ABSPATH, $img_url); //hier kann auch ein Array übergeben werden
         //Extract the first frame of the gif as a jpeg file and save it to the media library.
-        imagejpeg(imagecreatefromgif($img_url), $new_still_path);
-
+        $gifImage = imagecreatefromgif($img_url);
+        imagejpeg($gifImage, $new_still_path);
         return $new_still_path; //return path to still first frame
     }
 
